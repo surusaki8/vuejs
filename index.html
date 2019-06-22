@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vue test</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+  <h2>vue.js</h2>
+  <div id="app">
+    {{ message }}
+  </div>
+  <hr>
+  <button onclick="doAction();">push!</button>
+  <script>
+    var flag = false;
+    var data = {
+      message: 'hello Vue!'
+    }
+    var vm = new Vue({
+      el: '#app',
+      data: data,
+    });
+    function doAction() {
+      if(this.flag == false) {
+        data.message = 'はい。';
+        this.flag = true;
+      } else if(this.flag == true) {
+        data.message = 'hello vue!';
+        this.flag = false;
+      }
+    }
+  </script>
+</body>
+</html>
