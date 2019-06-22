@@ -1,3 +1,4 @@
+<<<<<<< HEAD:index2.html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,4 +35,53 @@
   </script>
   
 </body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>My  first Vue app</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+  <h1>Vue.js</h1>
+  <div id="app">
+    {{ message }}
+  </div>
+  <hr>
+  <button onclick="doAction();">
+    click
+  </button>
+
+  <script>
+  var data = {
+    message: 'Hello Vue!'
+  };
+
+  var app = new Vue({
+    el: '#app',
+    data: data,
+    render: (element)=>{
+      return element ("ol",
+          {
+            'style':'list-style:none;'
+          },
+          [
+            element("li","item 1"),
+            element("li","item 2"),
+            element("li","item 3"),
+          ]);
+    }
+  })
+  function doAction() {
+    data.message = "You Clicked!!";
+  }
+  
+  
+  </script>
+  
+</body>
+>>>>>>> afbc7bfba7f5c73b3b5a6cb945d45f0c8548c2d2:vuest/index2.html
 </html>
