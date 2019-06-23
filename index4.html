@@ -33,9 +33,14 @@
     el: '#app',
     data: data,
     render(h) {
-      return h("h3",
-      {'style':'font-size:20pt; color:black;'},
-      data.message);
+      return h("div",
+      [
+        h("div",{'class':'w3-card-2 w3-panel w3-center w3-padding w3-white'},"header"),
+        h("div",{'class':'w3-padding'},"sddklfjlskdfjlksdfjlskdjfslfjkjdfkjdkfjkdfjkdjfdkfjdkfjdkfjkdjfkdfjdkfj"),
+        h("div",{'class':'w3-btn w3-right w3-gray'},'pushpush'),
+        h("div",{'class':'w3-padding'},"sddklfjlskdfjlksdfjlskdjfslfjkjdfkjdkfjkdfjkdjfdkfjdkfjdkfjkdjfkdfjdkfj"),
+        h("div",{'class':'w3-card-2 w3-panel w3-center w3-padding w3-white'},"footer"),
+      ]);
     },
   })
 
