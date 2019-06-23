@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>My  first Vue app</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+  <div class="w3-container">
+  <h1>Vue.js</h1>
+  <div class="w3-card-4 w3-padding w3-red">
+  <div id="app" >
+    {{ message }}
+  </div>
+  </div>
+  <hr>
+  <button onclick="doAction1();">
+    click
+  </button>
+  <button onclick="doAction2();">
+    クリック
+  </button>
+  </div>
+  <script>
+  var data = {
+    message: 'hello vue!',
+    items: [
+      'One',
+      'Two',
+      'Three',
+      'Four',
+      'Five'
+    ]
+  };
+
+  var app = new Vue({
+    el: '#app',
+    data: data,
+    render: (h)=> {
+      return h("div", [
+        h("p",
+            {style:'font-size:20pt;'},
+            data.message),
+        h("ol",
+            data.items.map(i=> h('li', i))
+        )
+      ]);
+    },
+  })
+
+  function doAction1(){
+    var newdata = ['iti','ni','san','yon','go']
+    data.message = "くりいくしました！",
+    data.items[0] = 'zero';
+    for (n in data.items) {
+      data.items[n] = newdata[n];
+    }
+  }
+  function doAction2(){
+    var newdata = ['hoge','moge','fuga','doga','raga','moga','mobo','ku-fu-rinn','mojyaro']
+    data.message = "こももももそ";
+    data.items[0] = 'ナッシング';
+    for (n in data.items) {
+      data.items[n] = newdata[n];
+    }
+  }
+  </script>
+  
+</body>
+</html>
