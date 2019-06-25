@@ -10,17 +10,19 @@
 </head>
 <body>
   <style>
-    .red {
-      font-size: 20pt;
+    .on {
+      font-size: 24pt;
       font-weight:bold;
       font-family:normal;
-      color:red;
+      color:blue;
+      padding: 5px 10px;
+      border: 2px solid white;
     }
-    .blue {
-      font-size:24pt;
+    .ng {
+      font-size:15pt;
       font-weight:plain;
       font-style:italic;
-      color:blue;
+      color:gray;
     }
   </style>
 
@@ -28,35 +30,26 @@
   <h1>Vue.js</h1>
   <div class="w3-card-4 w3-padding w3-red">
   <div id="app" >
-    <p v-bind:style="styles">
-      {{ message }}
+    <p v-if="flag" class="ok">
+      これは正常
+    </p>
+    <p v-else class="ng">
+      ※トラブル発生。。。
     </p>
   </div>
   <hr>
   <button onclick="doAction1();">
     click
   </button>
-  <button onclick="doAction2();">
-    クリック
-  </button>
+  
   </div>
   </div>
 
   <script>
-  var classObj = {
-    red: true,
-    blue: false,
-  }
+  
 
   var data = {
-    message: 'hello vue!',
-    styles: {
-      textAlign: 'center',
-      fontSize:'20pt',
-      color:'white',
-      border:'2px solid cyan',
-      borderRadius:'5px'
-    }
+    flag : true
   };
 
   var app = new Vue({
@@ -64,18 +57,13 @@
     data: data,
   })
 
-  function doInput(event) {
-    data.message = event.target.value;
-  }
+  
 
   function doAction1(){
-    classObj.red = !classObj.red;
-    classObj.blue = !classObj.blue;
+    data.flag = !data.flag;
     }
   
-  function doAction2(){
-    document.comment.value = "";
-  }
+ 
   </script>
   
 </body>

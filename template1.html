@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>My  first Vue app</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+  <style>
+    table tr th {
+      font-size: 16pt;
+      font-weight:bold;
+      background-color:blue;
+      color:white;
+      padding: 5px 15px;
+    }
+    table tr th {
+      font-size:16pt;
+      font-weight:plain;
+      font-style:italic;
+      color:gray;
+      border: 1px dotted gray;
+    }
+    li {
+      font-size:16px;
+      color:gray;
+    }
+  </style>
+
+  <div class="w3-container">
+  <h1>Vue.js</h1>
+  <div class="w3-card-4 w3-padding w3-red">
+  <div id="app" >
+    <p>こここここ<span v-if="arow">↑</span><span v-else>↓</span></p>
+    <template v-if="flag">
+      <p>
+        ※データテーブルを表示する
+      </p>
+      <table>
+        <tr><th>Name</th><th>mail</th></tr>
+        <tr><td>Taro</td><td>taro@yamada</td></tr>
+        <tr><td>Hanako</td><td>hanako@flower</td></tr>
+        <tr><td>Sachico</td><td>sachiko@happy</td></tr>
+      </table>
+    </template>
+    <template v-else>
+      <p>
+        ※データをリスト表示する
+      </p>
+      <ul>
+        <li>Taroのアドレスは、taro@yamadaです。</li>
+        <li>hanakoのアドレスは、hanako@flowerです。</li>
+        <li>Sachikoのアドレスは、sachiko@happyです。</li>
+      </ul>
+    </template>
+  </div>
+  <hr>
+  <button onclick="doAction1();">
+    click
+  </button>
+  
+  </div>
+  </div>
+
+  <script>
+  
+
+  var data = {
+    flag : true,
+    arow : true,
+  };
+
+  var app = new Vue({
+    el: '#app',
+    data: data,
+  });
+
+  
+
+  function doAction1(){
+    data.flag = !data.flag;
+    data.arow = !data.arow;
+    }
+  
+  </script>
+  
+</body>
+</html>

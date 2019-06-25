@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>My  first Vue app</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+  <style>
+    table {
+      border-collapse: collapse;
+    }
+    table tr th {
+      font-size: 16pt;
+      font-weight:bold;
+      background-color:white;
+      color:white;
+      padding: 5px 15px;
+    }
+    table tr th {
+      font-size:16pt;
+      font-weight:plain;
+      font-style:italic;
+      color:gray;
+      border: 1px solid gray;
+    }
+  </style>
+
+  <div class="w3-container">
+  <h1>Vue.js</h1>
+  <div class="w3-card-4 w3-padding w3-red">
+  <div id="app" >
+    <p>こここここ<span v-if="arow">↑</span><span v-else>↓</span></p>
+      <p>
+        ※データテーブルを表示する
+      </p>
+      <table border="1">
+        <tr>
+          <th class="w3-padding">name</th>
+          <th class="w3-padding">mail</th>
+          <th class="w3-padding">tel</th>
+        </tr>
+        <tr v-for="(item, key) in items">
+          <td class="w3-padding">{{key}}</td>
+          <td class="w3-padding">{{item.mail}}</td>
+          <td class="w3-padding">{{item.tel}}</td>
+        </tr>
+      </table>
+  </div>
+  <hr>
+  <button onclick="doAction1();">
+    click
+  </button>
+  </div>
+  </div>
+
+  <script>
+  var data = {
+    arow: true,
+    items: {
+      Taro:{mail:'taro@yamada',tel:'999-999'},
+      Hanako:{mail:'hanako@flower',tel:'888-888'},
+      Sachiko:{mail:'sachiko@happy',tel:'777-777'},
+      Jiro:{mail:'jiro@change',tel:'666-666'},
+      mami:{mail:'mami@mumemo',tel:'555-555'},
+    }
+  };
+
+  var app = new Vue({
+    el: '#app',
+    data: data,
+  });
+
+  function doAction1(){
+    data.flag = !data.flag;
+    data.arow = !data.arow;
+    }
+  
+  </script>
+  
+</body>
+</html>
