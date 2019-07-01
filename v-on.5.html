@@ -12,21 +12,25 @@
   <div class="w3-container">
     <h1 class="w3-panel w3-card-2 w3-border-left w3-padding">Vue.js</h1>
     <div id="app">
-      <hello />
+      <div><hello /></div>
+      <div><hello /></div>
+      <div><hello /></div>
     </div>
   </div>
 
   <script>
-  Vue.component('hello',{
-    data: function() {
-      return {
-        message: 'これがヤバｔです。'
-      };
-    },
-    template: '<p class="w3-padding w3-text-red w3-center w3-border">{{message}}</p>'
-  })
   var app = new Vue({
     el: '#app',
+    components: {
+      hello: {
+        data:function(){
+          return {
+            counter:0,
+          };
+        },
+        template: '<p v-on:click="counter++;" class="hello">clicked: {{counter}}.</p>',
+      }
+    }
   });
   </script>
 </body>

@@ -12,30 +12,17 @@
   <div class="w3-container">
     <h1 class="w3-panel w3-card-2 w3-border-left w3-padding">Vue.js</h1>
     <div id="app">
-<<<<<<< HEAD
-      <div><hello hoge="Hoge" /></div> 
-      <div><hello hoge="Hanako" /></div>
-=======
       <div><hello name="Yabat" /></div>
       <div><hello name=555 /></div>
->>>>>>> e5eb1fd94165e6d84a404665ed3c833fba473b8b
     </div>
   </div>
 
   <script>
-<<<<<<< HEAD
-  Vue.component('hello',
-  {
-    props:['hoge'],
-    template: '<p class="w3-padding w3-text-red w3-center w3-border">へろー{{hoge}}！</p>'
-  });
-=======
   Vue.component('hello',{
     props:{ name:String },
     template: '<p class="w3-padding w3-text-red w3-center w3-border" style="max-width:50%; margin: 10px auto;">Hello {{name}} toiukotodesu!</p>',
   })
 
->>>>>>> e5eb1fd94165e6d84a404665ed3c833fba473b8b
   var app = new Vue({
     el: '#app',
   });
